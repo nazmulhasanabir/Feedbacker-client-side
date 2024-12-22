@@ -1,15 +1,21 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../Context/AuthContex";
-import Swal from "sweetalert2";
 
-const Regster = () => {
-  const { createUser } = useContext(AuthContext);
+import Swal from "sweetalert2";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import auth from "../../Firebase/Firebase.init";
+
+const Register = () => {
+  const { createUser, UpdateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [Error, setError] = useState("");
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
+    const name = form.name.value;
+    const photoUrl = form.photoUrl.value;
     const password = form.password.value;
 
     // password validation
@@ -31,6 +37,21 @@ const Regster = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        if (result.user) {
+          Swal.fire({
+            icon: "success",
+            title: "Success!",
+            text: "Your Registerd Successfull!",
+          });
+        }
+        UpdateUserProfile({ displayName: name, photoURL: photoUrl })
+          .then(() => {
+            navigate("/");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+
       })
       .catch((error) => {
         Swal.fire({
@@ -43,6 +64,34 @@ const Regster = () => {
       });
   };
 
+  const handleGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      // eslint-disable-next-line no-unused-vars
+      .then((result) => {
+        if (result) {
+          Swal.fire({
+            title: "Success!",
+            text: "Google sign-In successful!",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+        }
+        navigate(location?.state ? location.state : "/");
+      })
+      // eslint-disable-next-line no-unused-vars
+      .catch((error) => {
+        if (error) {
+          Swal.fire({
+            title: "Error!",
+            text: "An error occurred during Google sign-in. Please try again.",
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        }
+      });
+  };
+
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -51,12 +100,36 @@ const Regster = () => {
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
               <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                name="name"
+                type="text"
+                placeholder="Name"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
                 name="email"
                 type="email"
                 placeholder="email"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">PhotoUrl</span>
+              </label>
+              <input
+                name="photoUrl"
+                type="url"
+                placeholder="PhotoUrl"
                 className="input input-bordered"
                 required
               />
@@ -72,9 +145,14 @@ const Regster = () => {
                 className="input input-bordered"
                 required
               />
-            
             </div>
             <div className="form-control mt-6">
+              <img
+                onClick={handleGoogle}
+                className="rounded-full cursor-pointer h-10 w-10 mx-auto"
+                src={"https://i.ibb.co.com/vYyWjVq/images.png"}
+                alt="Google Sign-In"
+              />
               <p className="mt-2 text-center ">
                 You have already a account?
                 <Link to={"/signIn"}>
@@ -93,4 +171,4 @@ const Regster = () => {
   );
 };
 
-export default Regster;
+export default Register;
