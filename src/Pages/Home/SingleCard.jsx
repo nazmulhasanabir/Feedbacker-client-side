@@ -1,10 +1,15 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import { animate } from "https://cdn.jsdelivr.net/npm/framer-motion@11.11.11/dom/+esm";
 const SingleCard = ({service}) => {
-    const {title,description,price,image} = service
+    const {title,description,price,image} = service;
+    useEffect(() => {
+        animate(".animated-card", { scale: [0.4, 1] }, { ease: "circInOut", duration: 1 });
+      }, []);
+    
     return (
-        <div>
-            <div className="card bg-base-100 w-96 shadow-xl">
+         <div>
+            
+            <div className="card bg-base-100 w-96 shadow-xl animated-card">
   <figure>
     <img
         className='w-full h-[250px]'

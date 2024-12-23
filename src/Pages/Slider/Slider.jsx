@@ -1,4 +1,5 @@
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { animate } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
 import { Swiper, SwiperSlide } from "swiper/react";
    import img1 from '../../assets/pinterest/one.jpg'
    import img2 from '../../assets/pinterest/two.jpg'
@@ -11,9 +12,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { useEffect } from "react";
 const   Slider = () => {
+   useEffect(() => {
+    animate(".box", { opacity: 1, rotate: 360 }, { duration: 1 });
+        }, []);
     return (
-        <div className="bg-green-600">
+        <div className="bg-green-600 box">
              <Swiper
         // slidesPerView={3}
         // spaceBetween={30}
