@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
+import { Link } from "react-router-dom";
 
 const ExtraTwo = () => {
   return (
@@ -24,7 +25,7 @@ const ExtraTwo = () => {
         your opinions and connect with others effortlessly, making every
         review count.
       </p>
-      <button className="btn btn-primary btn-md">About Us</button>
+   <Link to={'/about'}><button className="btn btn-primary btn-md">About Us</button></Link>
     </div>
     <div className="w-full lg:w-6/12 ">
       <Swiper
