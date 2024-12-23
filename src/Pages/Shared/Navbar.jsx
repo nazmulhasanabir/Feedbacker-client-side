@@ -4,17 +4,18 @@ import AuthContext from "../../Context/AuthContex";
 import Swal from "sweetalert2";
 const Navbar = () =>{
   const {user , signOutUser , loading} = useContext(AuthContext)
-  console.log(user);
+
   const link = 
   <>
       <Link to={'/'}><li><a>Home</a></li></Link>
-        <Link to={'/service'}><li><a>Services</a></li></Link>
+        <Link to={'/AllService'}><li><a>Services</a></li></Link>
   </>
   const UserLink = 
   <>
       <Link to={'/'}><li><a>Home</a></li></Link>
-        <Link to={'/service'}><li><a>Services</a></li></Link>
-        <Link to={'/service'}><li><a>Add Service</a></li></Link>
+        <Link to={'/AllService'}><li><a>Services</a></li></Link>
+        <Link to={'/addedService'}><li><a>Add Service</a></li></Link>
+        <Link to={'/addedService'}><li><a>My Services</a></li></Link>
         <Link to={'/service'}><li><a>My Reviews</a></li></Link>
 
   </>

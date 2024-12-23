@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import SingleCard from "./SingleCard";
+import { Link } from "react-router-dom";
 
 const ServiceCard = () => {
   const [services, setServices] = useState([]);
@@ -21,6 +22,9 @@ const ServiceCard = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {sliceService.map((service) =>  <SingleCard key={service._id} service={service} ></SingleCard> )}
       </div>
+   <div className="p-8 w-2/12  mx-auto">
+   <Link to={'/AllService'}><button className="btn">See All Service</button></Link>
+   </div>
     </>
   );
 };

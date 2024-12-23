@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { animate } from "https://cdn.jsdelivr.net/npm/framer-motion@11.11.11/dom/+esm";
+import { Link } from 'react-router-dom';
 const SingleCard = ({service}) => {
-    const {title,description,price,image} = service;
+    const {title,description,price,image , _id} = service;
     useEffect(() => {
         animate(".animated-card", { scale: [0.4, 1] }, { ease: "circInOut", duration: 1 });
       }, []);
@@ -23,7 +24,7 @@ const SingleCard = ({service}) => {
     </h2>
     <p>{description}</p>
     <div className="card-actions justify-end">
-      <div className="badge badge-outline btn">See Details</div>
+    <Link to={`/feedback/${_id}`}><div className="badge badge-outline btn">See Details</div></Link>
     </div>
   </div>
 </div>
