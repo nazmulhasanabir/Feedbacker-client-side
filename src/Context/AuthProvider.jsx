@@ -31,7 +31,7 @@ const AuthProvider = ({children}) => {
         return () => {
             unsubscribe
         }
-    }, [])
+    }, [auth])
     const UpdateUserProfile = (updateData) => {
         console.log(updateData)
         return updateProfile(auth.currentUser, updateData);
@@ -43,7 +43,8 @@ const AuthProvider = ({children}) => {
             createUser,
             signInUser,
             signOutUser,
-            UpdateUserProfile
+            UpdateUserProfile,
+            
     }
 
     return (

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../Context/AuthContex";
 import Swal from "sweetalert2";
 const Navbar = () =>{
-  const {user , signOutUser} = useContext(AuthContext)
+  const {user , signOutUser , loading} = useContext(AuthContext)
   console.log(user);
   const link = 
   <>
@@ -40,6 +40,11 @@ const Navbar = () =>{
 
   }
 
+  if (loading) {
+    return <div>Loading...</div>; // You can replace this with a spinner
+  }
+
+
     return(
     <div className="navbar bg-base-100">
   <div className="navbar-start">
@@ -66,7 +71,10 @@ const Navbar = () =>{
       }
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">FeedBacker</a>
+    <div className="flex">
+      <img className=" w-28 " src="/src/assets/logo/e4jgbyjh8qwannrkevavx04jv0_image.jpg" alt="" />
+      {/* <a className="btn btn-ghost text-xl">FeedBacker</a> */}
+    </div>
 
   </div>
   <div className="navbar-center hidden lg:flex">

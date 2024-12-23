@@ -5,11 +5,11 @@ const Footer = () => {
     <div>
       <footer className=" flex flex-col justify-center items-center gap-4 dark:bg-gradient-to-br from-white via-white to-white dark:text-black rounded p-1 ">
       <img
-              className="w-12 rounded-full h-12"
-              src="https://i.pinimg.com/736x/73/bc/7e/73bc7ec40362947e3565c37b6af4d7f1.jpg"
+              className=" h-28 w-44"
+              src="/src/assets/logo/e4jgbyjh8qwannrkevavx04jv0_image.jpg"
               alt="Logo"
             />
-            <h2 className="text-3xl font-bold">FeedBacker</h2>
+            {/* <h2 className="text-3xl font-bold">FeedBacker</h2> */}
         <nav className="grid grid-flow-col gap-4">
           <a href="about" className="link link-hover">
             About
