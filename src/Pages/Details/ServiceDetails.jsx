@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const ServiceDetails = () => {
   const details = useLoaderData();
@@ -18,7 +18,7 @@ const ServiceDetails = () => {
             <p className="py-6">
               {details.description}
             </p>
-            <button className="btn btn-primary">Add Review</button>
+          <Link to={'/addReview'}><button className="btn btn-primary">Add Review</button></Link>
           </div>
         </div>
       </div>

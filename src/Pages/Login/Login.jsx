@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../Context/AuthContex";
 import Swal from "sweetalert2";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
@@ -8,7 +8,8 @@ import auth from "../../Firebase/Firebase.init";
 const Login = () => {
   const { signInUser } = useContext(AuthContext);
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const from = location.state || '/'
   const handleSignIn = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -25,7 +26,7 @@ const Login = () => {
             text: "Your Login Successfull!",
           });
         }
-        navigate("/");
+        navigate(from);
       })
       .catch((error) => {
         console.log(error);
