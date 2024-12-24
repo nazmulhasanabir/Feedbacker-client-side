@@ -3,16 +3,17 @@ import ReactStars from "react-rating-stars-component";
 import { render } from "react-dom";
 
 const AddReview = () => {
-  const ratingChanged = (newRating) => {
-    console.log(newRating);
-  };
-
-  const handleInputChange = (e) => {
-    let value = parseInt(e.target.value, 10);
-    if (value < 0) value = 0;
-    if (value > 5) value = 5;
-    e.target.value = value;
-  };
+    const [rating , setRating] = useState(0);
+    
+    const handleInputChange = (e) => {
+        let value = parseInt(e.target.value, 10);
+        if (value < 0) value = 0;
+        if (value > 5) value = 5;
+        setRating(value);
+    };
+    const ratingChanged = (newRating) => {
+      setRating(newRating);
+    };
   return (
     <div>
       <div className="w-6/12 mx-auto">
@@ -23,25 +24,28 @@ const AddReview = () => {
         ></textarea>
         {/* rating section */}
         <label className="input input-bordered flex items-center gap-2">
-          rating star
-          <input
-            type="number"
-            className="grow"
-            placeholder="Rating star"
-            min="0"
-            max="5"
-            step="1"
-            onChange={handleInputChange}
-          />
-          <ReactStars
+        <ReactStars
             count={5}
             onChange={ratingChanged}
+            value={rating}
             size={30}
             emptyIcon={<i className="far fa-star"></i>}
             halfIcon={<i className="fa fa-star-half-alt"></i>}
             fullIcon={<i className="fa fa-star"></i>}
             activeColor="#ffd700"
           />
+          (Clicked The Star )
+          <input
+            type="0"
+            className="grow"
+            placeholder="Rating star"
+            min="0"
+            value={rating}
+            max="5"
+            step="1"
+            onChange={handleInputChange}
+          />
+        
         </label>
 
         {/* review posted date */}
