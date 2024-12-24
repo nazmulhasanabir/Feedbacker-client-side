@@ -10,6 +10,8 @@ import AllService from "../Pages/Home/AllService";
 import ServiceDetails from "../Pages/Details/ServiceDetails";
 import AddReview from "../Review/AddReview";
 import PrivateRoute from "./PrivateRoute";
+import MyReview from "../Pages/My review/MyReview";
+import MyService from "../Pages/MyService";
 
 const router = createBrowserRouter([
   {
@@ -23,42 +25,60 @@ const router = createBrowserRouter([
       },
       {
         path: "signIn",
-        element:<Login></Login>
+        element: <Login></Login>,
       },
       {
-        path: 'register',
-        element:<Register></Register>
+        path: "register",
+        element: <Register></Register>,
       },
       {
-        path:'addedService',
-        element:<PrivateRoute>
-          <AddedService></AddedService>
-        </PrivateRoute>
-      },
-      {
-        path:'/addReview/:id',
-        element:<PrivateRoute>
-          <AddReview></AddReview>
+        path: "myService",
+        element: (
+          <PrivateRoute>
+            <MyService></MyService>
           </PrivateRoute>
+        ),
+      },
+      {
+        path: "myReview",
+        element: (
+          <PrivateRoute>
+            <MyReview></MyReview>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "addedService",
+        element: (
+          <PrivateRoute>
+            <AddedService></AddedService>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/addReview/:id",
+        element: (
+          <PrivateRoute>
+            <AddReview></AddReview>
+          </PrivateRoute>
+        ),
       },
 
       {
-        path:'/feedback/:id',
-        element:<ServiceDetails></ServiceDetails>,
-        loader:({params})=> 
-          fetch(`http://localhost:7000/feedback/${params.id}`)
-        
-      }
-      ,
-      {
-        path:'AllService',
-        element:<AllService></AllService>,
-        loader:() => fetch("http://localhost:7000/feedback")
+        path: "/feedback/:id",
+        element: <ServiceDetails></ServiceDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:7000/feedback/${params.id}`),
       },
       {
-        path:'about',
-        element:<About></About>
-      }
+        path: "AllService",
+        element: <AllService></AllService>,
+        loader: () => fetch("http://localhost:7000/feedback"),
+      },
+      {
+        path: "about",
+        element: <About></About>,
+      },
     ],
   },
 ]);
