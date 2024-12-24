@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const ServiceDetails = () => {
   const details = useLoaderData();
-//   const [SerDetails, setSerDetails] = useState([details]);
+  
   console.log(details);
   return (
     <div>
@@ -18,7 +18,7 @@ const ServiceDetails = () => {
             <p className="py-6">
               {details.description}
             </p>
-          <Link to={'/addReview'}><button className="btn btn-primary">Add Review</button></Link>
+          <Link to={`/addReview/${details._id}`}><button className="btn btn-primary">Add Review</button></Link>
           </div>
         </div>
       </div>
