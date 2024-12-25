@@ -5,13 +5,14 @@ import Swal from "sweetalert2";
 
 const MyService = () => {
   const [services, setServices] = useState([]);
+  const [search, setSearch ] = useState('')
   const { user } = UseAuth();
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`http://localhost:7000/feedback?email=${user.email}`)
+    fetch(`http://localhost:7000/feedback?email=${user.email}&search=${search}`)
       .then((res) => res.json())
       .then((data) => setServices(data));
-  }, [user.email]);
+  }, [user.email, search]);
 
   const handleDelete = (_id) => {
     Swal.fire({
@@ -30,14 +31,16 @@ const MyService = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              const remaining = services.filter((service) => service._id !== _id)
-              setServices(remaining)
+              const remaining = services.filter(
+                (service) => service._id !== _id
+              );
+              setServices(remaining);
               Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
                 icon: "success",
               });
-              navigate('/AllService')
+              navigate("/AllService");
             }
           });
       }
@@ -47,6 +50,23 @@ const MyService = () => {
   return (
     <div>
       setvice {services.length}
+      <div className="w-6/12 mx-auto">
+        <label className="input input-bordered flex items-center gap-2">
+          <input onChange={e => setSearch(e.target.value)} type="text" name="search" className="grow" placeholder="Search" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            className="h-4 w-4 opacity-70"
+          >
+            <path
+              fillRule="evenodd"
+              d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </label>
+      </div>
       <div>
         <div className="overflow-x-auto">
           <table className="table">

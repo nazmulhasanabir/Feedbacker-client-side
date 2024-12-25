@@ -2,13 +2,13 @@ import React, {  useState } from "react";
 import UseAuth from "../../Hook/UseAuth";
 import axios from "axios";
 import RatingCustome from "../../Rating/RatingCustome";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyReview = () => {
   const { user } = UseAuth();
-  
   const [reviews, setReviews] = useState([]);
-
+  const navigate = useNavigate()
   // useEffect(() =>{
   //         fetch(`http://localhost:7000/reviewAdd?email=${user.email}`)
   // }, [])
@@ -18,6 +18,38 @@ const MyReview = () => {
       // console.log(response);
       setReviews(response.data);
     });
+
+    const handleDelete = (_id) => {
+      Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+          }).then((result) => {
+            if(result.isConfirmed){
+              fetch(`http://localhost:7000/review/${_id}`, {
+                method: 'DELETE',
+              })
+            }
+          })
+          .then((res) => res.json())
+          .then((data)=> {
+            if(data.deletedCount > 0){
+              const remaining = reviews.filter((review) => review._id !== _id ) 
+              setReviews(remaining)
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              })
+              navigate('/AllService')
+            }
+          })
+    }
+
   return (
     <div>
       My review{reviews.length}
@@ -66,7 +98,9 @@ const MyReview = () => {
                 </td>
               <div className="flex justify-between w-3/4 mx-auto">
               <Link to={`/UpdateReview/${review._id}`}><button className="btn btn-active">Update</button></Link>
-              <button className="btn btn-active">Delete</button>
+              <button
+                onClick={() => handleDelete(review._id)}
+              className="btn btn-active">Delete</button>
                 </div>              
                 <th>
                 </th>

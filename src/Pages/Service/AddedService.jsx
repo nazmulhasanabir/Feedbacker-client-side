@@ -12,6 +12,8 @@ const AddedService = () => {
   const handleAddService = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries())
+    console.log(data);
     const initialData = Object.fromEntries(formData.entries());
     const serviceData = {
       ...initialData,
@@ -90,12 +92,18 @@ const AddedService = () => {
           </label>
           {/* Category */}
           <label className="input input-bordered flex items-center gap-2">
-            <input
+            {/* <input
               name="category"
               type="text"
               className="grow"
               placeholder="Category"
-            />
+            /> */}
+      <select name="category">
+        <option disabled selected>--Select a Category  --</option>
+        <option>Transport</option>
+        <option>Software</option>
+        <option>Restaurant</option>
+      </select>
           </label>
           {/* Price */}
           <label className="input input-bordered flex items-center gap-2">

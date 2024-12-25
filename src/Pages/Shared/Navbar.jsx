@@ -12,7 +12,7 @@ const Navbar = () =>{
   const UserLink = 
   <>
       <Link to={'/'}><li><a>Home</a></li></Link>
-        <Link to={'/AllService'}><li><a>Services</a></li></Link>
+        <Link to={'/AllService'}><li><a>All Services</a></li></Link>
         <Link to={'/addedService'}><li><a>Add Service</a></li></Link>
         <Link to={'/myService'}><li><a>My Services</a></li></Link>
         <Link to={'/myReview'}><li><a>My Reviews</a></li></Link>
