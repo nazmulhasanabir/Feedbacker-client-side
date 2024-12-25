@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import ReactStars from "react-rating-stars-component";
+import { format } from 'date-fns';
 
 import { useNavigate, useParams } from "react-router-dom";
 import UseAuth from "../Hook/UseAuth";
@@ -9,7 +10,9 @@ const AddReview = () => {
   const navigate = useNavigate()
   const { user } = UseAuth();
   const { id } = useParams();
-    
+  const formattedDate = new Date();
+  const date = format(formattedDate, 'yyyy-MM-dd')
+
   const [rating, setRating] = useState(0);
   const handleInputChange = (e) => {
     let value = parseInt(e.target.value, 10);
@@ -25,7 +28,6 @@ const AddReview = () => {
     const from = e.target;
     const textReview = from.textReview.value;
     const starReview = from.starReview.value;
-    const date = from.date.value;
     const Username = from.Username.value;
     const photoURL = from.photoURL.value;
     // console.log(textReview,starReview,date,Username,photoURL)
@@ -34,9 +36,9 @@ const AddReview = () => {
       Reviewer_email: user.email,
       textReview,
       starReview,
-      date,
       Username,
       photoURL,
+      date
     };
     fetch("http://localhost:7000/reviewAdd", {
       method: "POST",
@@ -108,13 +110,7 @@ const AddReview = () => {
             {/* review posted date */}
             <label className="input input-bordered flex items-center gap-2">
               Date
-              <input
-                name="date"
-                required
-                type="date"
-                className="grow"
-                placeholder="Date"
-              />
+              <h2>{date}</h2>  
             </label>
             {/* user info  */}
             <label className=" input input-bordered flex items-center gap-2">

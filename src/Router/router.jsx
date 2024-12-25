@@ -12,6 +12,7 @@ import AddReview from "../Review/AddReview";
 import PrivateRoute from "./PrivateRoute";
 import MyReview from "../Pages/My review/MyReview";
 import MyService from "../Pages/MyService";
+import UpdateService from "../Update/UpdateService";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,16 @@ const router = createBrowserRouter([
             <AddReview></AddReview>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "updateService/:id",
+        element:<PrivateRoute>
+          <UpdateService></UpdateService>
+        </PrivateRoute>,
+        loader: ({params}) => 
+          fetch(`http://localhost:7000/updateService/${params.id}`)
+        // .then((res) => res.json())
+        // .catch((error) => console.error("Error fetching movie:", error)),
       },
 
       {

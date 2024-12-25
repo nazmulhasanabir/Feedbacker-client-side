@@ -5,26 +5,26 @@ import { Link } from "react-router-dom";
 
 const ServiceCard = () => {
   const [services, setServices] = useState([]);
-  // axios
-  //   .get("http://localhost:7000/feedback")
-  //   .then((response) => {
-  //     setServices(response.data);
-  //   })
-  //   .catch((error) => {
-  //     console.error("Error fetching data:", error);
-  //   });
+  axios
+    .get("http://localhost:7000/feedback")
+    .then((response) => {
+      setServices(response.data);
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
   
-      useEffect(() => {
-          fetch('http://localhost:7000/feedback')
-            .then((res) => res.json())
-            .then(
-              (data) => {
-                setServices(data);
-              },
-              []
-            );
+      // useEffect(() => {
+      //     fetch('http://localhost:7000/feedback')
+      //       .then((res) => res.json())
+      //       .then(
+      //         (data) => {
+      //           setServices(data);
+      //         },
+      //         []
+      //       );
         
-        });
+      //   });
         const sliceService = services.slice(0 , 6) 
   return (
     <>

@@ -1,10 +1,9 @@
-import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import AuthContext from "../../Context/AuthContex";
 import Swal from "sweetalert2";
+import UseAuth from "../../Hook/UseAuth";
 const Navbar = () =>{
-  const {user , signOutUser , loading} = useContext(AuthContext)
-
+  const {user , signOutUser , loading} = UseAuth({})
+  console.log(user);
   const link = 
   <>
       <Link to={'/'}><li><a>Home</a></li></Link>
@@ -90,7 +89,7 @@ const Navbar = () =>{
         user ?
          <>
             <p>{user.displayName}</p>
-            <img className="w-10 h-10" src={user.photoURL} alt="" />
+            <img className="w-10 h-10" src={user.photoURL} />
           <button  onClick={handleSignOut} className="btn " >Log-Out</button>
         </> :
          <>
