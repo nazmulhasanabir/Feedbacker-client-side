@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyReview from "../Pages/My review/MyReview";
 import MyService from "../Pages/MyService";
 import UpdateService from "../Update/UpdateService";
+import UpdateReview from "../Update/UpdateReview";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,12 @@ const router = createBrowserRouter([
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
           fetch(`http://localhost:7000/feedback/${params.id}`),
+      },
+      {
+        path: 'updateReview/:id',
+        element:<PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
+        loader:({params}) => 
+        fetch(`http://localhost:7000/UpdateReview/${params.id}`)
       },
       {
         path: "AllService",

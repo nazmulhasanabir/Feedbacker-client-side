@@ -2,6 +2,7 @@ import React, {  useState } from "react";
 import UseAuth from "../../Hook/UseAuth";
 import axios from "axios";
 import RatingCustome from "../../Rating/RatingCustome";
+import { Link } from "react-router-dom";
 
 const MyReview = () => {
   const { user } = UseAuth();
@@ -39,11 +40,6 @@ const MyReview = () => {
           <tbody>
             {reviews.map((review) => (
               <tr key={review._id}>
-                {/* <th>
-                  <label>
-                    <input type="checkbox" className="checkbox" />
-                  </label>
-                </th> */}
                 <td>
                   <div className="flex items-center gap-3">
                     <div className="avatar">
@@ -69,7 +65,7 @@ const MyReview = () => {
                   </span>
                 </td>
               <div className="flex justify-between w-3/4 mx-auto">
-              <button className="btn btn-active">Update</button>
+              <Link to={`/UpdateReview/${review._id}`}><button className="btn btn-active">Update</button></Link>
               <button className="btn btn-active">Delete</button>
                 </div>              
                 <th>
