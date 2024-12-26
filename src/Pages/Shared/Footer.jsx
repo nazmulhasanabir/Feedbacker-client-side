@@ -6,7 +6,7 @@ const Footer = () => {
       <footer className=" flex flex-col justify-center items-center gap-4 dark:bg-gradient-to-br from-white via-white to-white dark:text-black rounded p-1 ">
       <img
               className=" h-28 w-44"
-              src="/src/assets/logo/e4jgbyjh8qwannrkevavx04jv0_image.jpg"
+              src={'https://i.ibb.co.com/hDy0f3j/e4jgbyjh8qwannrkevavx04jv0-image.jpg'}
               alt="Logo"
             />
             {/* <h2 className="text-3xl font-bold">FeedBacker</h2> */}

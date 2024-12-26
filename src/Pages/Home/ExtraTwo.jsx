@@ -1,9 +1,9 @@
 import React from "react";
-import img1 from "../../assets/pinterest/pexels-photo-3184418.jpeg"
-import img2 from "../../assets/pinterest/one.jpg"
-import img3 from "../../assets/pinterest/two.jpg"
-import img4 from "../../assets/pinterest/three.jpg"
-import img5 from "../../assets/pinterest/four.jpg"
+
+import img2 from "../../assets/pinterest/1.jpg"
+import img3 from "../../assets/pinterest/12.png"
+import img4 from "../../assets/pinterest/123.jpg"
+import img5 from "../../assets/pinterest/1234.webp"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -14,8 +14,8 @@ import { Link } from "react-router-dom";
 const ExtraTwo = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center justify-between gap-4 bg-orange-500 ">
-    <div className=" w-6/12 p-12">
-      <h2 className="text-3xl  text-white  font-bold mb-4 ">
+    <div className=" w-6/12 p-4 lg:p-12">
+      <h2 className="text-xl  lg:text-3xl  text-white  font-bold mb-4 ">
         We craft engaging experiences through innovative storytelling and
         design.
       </h2>
@@ -38,9 +38,9 @@ const ExtraTwo = () => {
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <img src={img1} className="h-96 w-full  object-cover rounded-lg" />
-        </SwiperSlide>
+        </SwiperSlide> */}
         <SwiperSlide>
           <img src={img2} className="h-96 w-full  object-cover rounded-lg" />
         </SwiperSlide>

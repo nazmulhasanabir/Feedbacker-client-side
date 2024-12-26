@@ -40,7 +40,7 @@ const AddReview = () => {
       photoURL,
       date
     };
-    fetch("http://localhost:7000/reviewAdd", {
+    fetch("https://review-xpert-server-side.vercel.app/reviewAdd", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -62,7 +62,7 @@ const AddReview = () => {
 
   return (
     <div>
-      <div className="w-6/12 mx-auto">
+      <div className="w-11/12 lg:w-6/12 mx-auto">
         <div className="flex flex-col justify-center items-center">
           <img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" />
           <h2>{user.displayName}</h2>
@@ -86,7 +86,7 @@ const AddReview = () => {
                 count={5}
                 onChange={ratingChanged}
                 value={rating}
-                size={30}
+                size={20}
                 emptyIcon={<i className="far fa-star"></i>}
                 halfIcon={<i className="fa fa-star-half-alt"></i>}
                 fullIcon={<i className="fa fa-star"></i>}

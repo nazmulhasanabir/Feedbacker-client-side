@@ -10,6 +10,70 @@ const Register = () => {
   const { createUser, UpdateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
   const [Error, setError] = useState("");
+  // const handleRegister = (e) => {
+  //   e.preventDefault();
+  //   const form = e.target;
+  //   const email = form.email.value;
+  //   const name = form.name.value;
+  //   const photoUrl = form.photoUrl.value;
+  //   const password = form.password.value;
+
+  //   // password validation
+
+  //   const passwordRegex =
+  //     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+  //   if (password.length < 6) {
+  //     setError("Password Should be 6 Characters and longers");
+  //     return;
+  //   }
+
+  //   if (!passwordRegex.test(password)) {
+  //     setError(
+  //       "At Least one uppercase,one lowerCase,one number,one special character"
+  //     );
+  //     return;
+  //   }
+  //   fetch('https://review-xpert-server-side.vercel.app/user', {
+  //     method: "POST",
+  //     headers:{
+  //       'content-type': 'application/json'
+  //     },
+  //     body:JSON.stringify(name,email,photoUrl,password)
+  //   })
+  //   .then(res => res.json())
+  //   .then(data=> {
+  //     console.log(data);
+  //   })
+
+  //   createUser(email, password)
+  //     .then((result) => {
+  //       console.log(result.user);
+  //       if (result.user) {
+  //         Swal.fire({
+  //           icon: "success",
+  //           title: "Success!",
+  //           text: "Your Registerd Successfull!",
+  //         });
+  //       }
+  //       UpdateUserProfile({ displayName: name, photoURL: photoUrl })
+  //         .then(() => {
+  //           // navigate("/");
+  //         })
+  //         .catch((err) => {
+  //           console.log(err);
+  //         });
+
+  //     })
+  //     .catch((error) => {
+  //       Swal.fire({
+  //         title: "Error!",
+  //         text: "The account has been used already.",
+  //         icon: "error",
+  //         confirmButtonText: "OK",
+  //       });
+  //       console.log(error.message);
+  //     });
+  // };
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -18,21 +82,39 @@ const Register = () => {
     const photoUrl = form.photoUrl.value;
     const password = form.password.value;
 
-    // password validation
-
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
     if (password.length < 6) {
-      setError("Password Should be 6 Characters and longers");
+      setError("Password should be at least 6 characters long.");
       return;
     }
 
     if (!passwordRegex.test(password)) {
       setError(
-        "At Least one uppercase,one lowerCase,one number,one special character"
+        "Password must include at least one uppercase, one lowercase, one number, and one special character."
       );
       return;
     }
+
+    fetch("https://review-xpert-server-side.vercel.app/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        photoUrl,
+        password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("User saved successfully:", data);
+      })
+      .catch((error) => {
+        console.error("Error saving user:", error);
+      });
 
     createUser(email, password)
       .then((result) => {
@@ -41,7 +123,7 @@ const Register = () => {
           Swal.fire({
             icon: "success",
             title: "Success!",
-            text: "Your Registerd Successfull!",
+            text: "You have registered successfully!",
           });
         }
         UpdateUserProfile({ displayName: name, photoURL: photoUrl })
@@ -51,12 +133,11 @@ const Register = () => {
           .catch((err) => {
             console.log(err);
           });
-
       })
       .catch((error) => {
         Swal.fire({
           title: "Error!",
-          text: "The account has been used already.",
+          text: "The account has already been used.",
           icon: "error",
           confirmButtonText: "OK",
         });
@@ -67,8 +148,24 @@ const Register = () => {
   const handleGoogle = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
-      // eslint-disable-next-line no-unused-vars
+      // eslint-disable-next-line no-unused-var
       .then((result) => {
+        fetch("https://review-xpert-server-side.vercel.app/user", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+           result
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("User saved successfully:", data);
+          })
+          .catch((error) => {
+            console.error("Error saving user:", error);
+          });
         if (result) {
           Swal.fire({
             title: "Success!",
@@ -76,10 +173,11 @@ const Register = () => {
             icon: "success",
             confirmButtonText: "OK",
           });
+          
         }
         navigate(location?.state ? location.state : "/");
       })
-      // eslint-disable-next-line no-unused-vars
+
       .catch((error) => {
         if (error) {
           Swal.fire({

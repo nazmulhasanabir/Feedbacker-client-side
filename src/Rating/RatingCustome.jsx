@@ -11,7 +11,7 @@ function RatingCustome({ rating, setRating }) {
             style={{
               cursor: 'pointer',
               color: rating >= star ? 'gold' : 'gray',
-              fontSize: `20px`,
+              fontSize: `18px`,
             }}
             onClick={() => {
               setRating(star)

@@ -7,13 +7,14 @@ const AllService = () => {
     const [filter , setFilter] = useState('')
 
   useEffect(() => {
-    fetch(`http://localhost:7000/feedback?filter=${filter}`)
+    fetch(`https://review-xpert-server-side.vercel.app/feedbacks?filter=${filter}`)
       .then((res) => res.json())
       .then((data) => {
         setService(data);
       }, [filter]);
   });
 
+  
   return (
     <div>
       <div className="w-6/12 mx-auto my-6">

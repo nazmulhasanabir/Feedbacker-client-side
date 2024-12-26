@@ -71,7 +71,7 @@ const router = createBrowserRouter([
           <UpdateService></UpdateService>
         </PrivateRoute>,
         loader: ({params}) => 
-          fetch(`http://localhost:7000/updateService/${params.id}`)
+          fetch(`https://review-xpert-server-side.vercel.app/updateService/${params.id}`)
         // .then((res) => res.json())
         // .catch((error) => console.error("Error fetching movie:", error)),
       },
@@ -80,18 +80,18 @@ const router = createBrowserRouter([
         path: "/feedback/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:7000/feedback/${params.id}`),
+          fetch(`https://review-xpert-server-side.vercel.app/feedback/${params.id}`),
       },
       {
         path: 'updateReview/:id',
         element:<PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
         loader:({params}) => 
-        fetch(`http://localhost:7000/UpdateReview/${params.id}`)
+        fetch(`https://review-xpert-server-side.vercel.app/UpdateReview/${params.id}`)
       },
       {
         path: "AllService",
         element: <AllService></AllService>,
-        loader: () => fetch("http://localhost:7000/feedback"),
+        loader: () => fetch("https://review-xpert-server-side.vercel.app/feedbacks"),
       },
       {
         path: "about",

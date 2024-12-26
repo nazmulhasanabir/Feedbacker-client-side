@@ -1,18 +1,32 @@
 import React, { useEffect, useState } from "react";
 import UseAuth from "../Hook/UseAuth";
-import { Link, useNavigate } from "react-router-dom";
+import { data, Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import CountUp from "react-countup";
+import axios from "axios";
+import useAxiosSecure from "../Hook/useAxiosSecure";
 
 const MyService = () => {
   const [services, setServices] = useState([]);
   const [search, setSearch ] = useState('')
   const { user } = UseAuth();
   const navigate = useNavigate();
+
+  const axiosSecure = useAxiosSecure()
+
   useEffect(() => {
-    fetch(`http://localhost:7000/feedback?email=${user.email}&search=${search}`)
-      .then((res) => res.json())
-      .then((data) => setServices(data));
-  }, [user.email, search]);
+    // fetch(`https://review-xpert-server-side.vercel.app/feedback?email=${user.email}&search=${search}`)
+    //   .then((res) => res.json())
+    //   .then((data) => setServices(data));
+    // axios.get(`https://review-xpert-server-side.vercel.app/feedback?email=${user.email}&search=${search}`,{
+    //   withCredentials:true
+    // })
+    //   .then(res => setServices(res.data))
+
+    axiosSecure.get(`/feedback?email=${user.email}&search=${search}`)
+      .then(res => setServices(res.data))
+  },
+   [user.email, search]);
 
   const handleDelete = (_id) => {
     Swal.fire({
@@ -25,7 +39,7 @@ const MyService = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:7000/feedback/${_id}`, {
+        fetch(`https://review-xpert-server-side.vercel.app/feedback/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -49,10 +63,9 @@ const MyService = () => {
 
   return (
     <div>
-      setvice {services.length}
       <div className="w-6/12 mx-auto">
         <label className="input input-bordered flex items-center gap-2">
-          <input onChange={e => setSearch(e.target.value)} type="text" name="search" className="grow" placeholder="Search" />
+          <input onChange={e => e.target.value.trim() && setSearch(e.target.value)} type="text" name="search" className="grow" placeholder="Search" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
@@ -68,6 +81,7 @@ const MyService = () => {
         </label>
       </div>
       <div>
+
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}

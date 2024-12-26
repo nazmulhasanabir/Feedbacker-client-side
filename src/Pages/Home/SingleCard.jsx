@@ -10,7 +10,7 @@ const SingleCard = ({service}) => {
     return (
          <div>
             
-            <div className="card bg-base-100 w-96 shadow-xl animated-card">
+            <div className="card bg-base-100 w-10/12 mx-auto shadow-xl animated-card">
   <figure>
     <img
         className='w-full h-[250px]'
@@ -20,7 +20,7 @@ const SingleCard = ({service}) => {
   <div className="card-body">
     <h2 className="card-title">
       {title}
-      <div className="badge badge-secondary">{price}$</div>
+      <div className="badge bg-red-500 text-white">{price}$</div>
     </h2>
     <p>{description}</p>
     <div className="card-actions justify-end">

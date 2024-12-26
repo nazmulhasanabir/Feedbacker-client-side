@@ -1,12 +1,14 @@
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { animate } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
 import { Swiper, SwiperSlide } from "swiper/react";
-   import img1 from '../../assets/pinterest/one.jpg'
-   import img2 from '../../assets/pinterest/two.jpg'
-   import img3 from '../../assets/pinterest/three.jpg'
-   import img4 from '../../assets/pinterest/four.jpg'
-   import img5 from '../../assets/pinterest/five.jpg'
-   import img6 from '../../assets/pinterest/six.jpg'
+   import img1 from '../../assets/pinterest/1.jpg'
+   import img2 from '../../assets/pinterest/12.png'
+   import img3 from '../../assets/pinterest/123.jpg'
+   import img4 from '../../assets/pinterest/1234.webp'
+   import img5 from '../../assets/pinterest/2.jpg'
+   import img6 from '../../assets/pinterest/23.jpg'
+   import img7 from '../../assets/pinterest/234.webp'
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -18,7 +20,7 @@ const   Slider = () => {
     animate(".box", { opacity: 1, rotate: 360 }, { duration: 1 });
         }, []);
     return (
-        <div className="bg-green-600 box">
+        <div className="m-1 lg:m-20">
              <Swiper
         // slidesPerView={3}
         // spaceBetween={30}
@@ -29,7 +31,7 @@ const   Slider = () => {
         // className="mySwiper"
         spaceBetween={200}
         centeredSlides={true}
-        slidesPerView={3}
+        slidesPerView={1}
         autoplay={{
           delay: 1000,
           disableOnInteraction: false,
@@ -42,12 +44,12 @@ const   Slider = () => {
         cl
 
       >
-        <SwiperSlide><img src={img1} /></SwiperSlide>
-        <SwiperSlide><img src={img2} /></SwiperSlide>
-        <SwiperSlide><img src={img3} /></SwiperSlide>
-        <SwiperSlide><img src={img4} /></SwiperSlide>
-        <SwiperSlide><img src={img5} /></SwiperSlide>
-        <SwiperSlide><img src={img6} /></SwiperSlide>
+       
+        <SwiperSlide><img className=" h-40 lg:h-[450px] w-full rounded-xl" src={img2} /></SwiperSlide>
+        <SwiperSlide><img className=" h-40 lg:h-[450px] w-full rounded-xl" src={img3} /></SwiperSlide>
+        <SwiperSlide><img className=" h-40 lg:h-[450px] w-full rounded-xl" src={img4} /></SwiperSlide>
+        <SwiperSlide><img className=" h-40 lg:h-[450px] w-full rounded-xl" src={img5} /></SwiperSlide>
+     
         
       </Swiper>
         </div>
