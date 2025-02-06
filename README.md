@@ -1,164 +1,140 @@
+# ⛰️ FEEDBACKER
+
+The Best Service Review Application System is a robust and user-friendly
+platform that allows users to explore, review, and manage services effectively.
+This application provides a seamless interface for 
+service providers and reviewers, ensuring a professional experience.
+adventure experiences seamlessly.
+It offers a user-friendly interface, authentication, and detailed adventure listings.
 
-FEEDBACKER
+![FEEDBACKER](https://i.ibb.co.com/x88kjBzv/image.png)
+
+## 🌐 Live Demo  
+🔗 **Live Site:** [FEEDBACKER](https://feedbacker-76382.web.app/)
+
+---
+
+## 📌 Table of Contents
+
+- [🚀 Features](#-features)
+- [🛠 Technologies Used](#-technologies-used)
+- [📥 Installation](#-installation)
+- [📦 Dependencies](#-dependencies)
+- [📖 Usage](#-usage)
 
-The Best Service Review Application System is a robust and user-friendly platform that allows users to explore, review, and manage services effectively. This application provides a seamless interface for service providers and reviewers, ensuring a professional experience.
+---
+
+## 🚀 Technologies Used  
+The project is built with the following technologies:  
 
-Live URL: https://feedbacker-76382.web.app/
+- **React** – Frontend framework  
+- **React Router** – For dynamic routing  
+- **Firebase** – Authentication & database  
+- **Tailwind CSS & Material Tailwind** – UI styling  
+- **TanStack Query & TanStack Table** – Data fetching & table UI  
+- **Axios** – API requests  
+- **Recharts** – Salary graph visualization  
+- **Swiper** – Testimonial slider  
+- **React Hook Form** – Form management  
+- **SweetAlert2** – Smooth toast notifications  
 
+---
 
-Key Features
 
-User Capabilities
 
-Service Management:
+## 🛠️ How to Run Locally  
 
-Add, update, and delete services.
+1️⃣ **Clone the Repository**  
+```sh
+git clone https://github.com/your-repo/staff-sync.git
+cd staff-sync
+```
 
-View detailed information for each service.
+2️⃣ **Install Dependencies**  
+```sh
+npm install
+```
 
-Review System:
+3️⃣ **Set Up environment file**  
+Here’s the `.env` configuration formatted in Markdown:
 
-Add, edit, and delete reviews.
+# Environment Variables
 
-Manage reviews through a dedicated page.
+Create a `.env` file in the root directory and add the following variables:
 
-Dynamic Pages:
+```env
+VITE_apiKey=your_firebase_apiKey
+VITE_authDomain=your_firebase_authDomain
+VITE_projectId=your_firebase_projectId
+VITE_storageBucket=your_firebase_storageBucket
+VITE_messagingSenderId=your_firebase_messagingSenderId
+VITE_appId=your_firebase_appId
+VITE_imageUploadKey=your_imageUploadKey
+VITE_baseUrl=your_server_baseUrl
+VITE_stripe_key=your_stripe_key
+```
+> **Note:** Replace `your_firebase_apiKey`, `your_imageUploadKey`, etc., with your actual keys.
 
-Home Page with featured services and additional sections.
+Make sure to add `.env` to your `.gitignore` file to keep your credentials secure.
 
-Fully responsive design for mobile, tablet, and desktop.
+4️⃣ **Run the Application**  
+```sh
+npm run dev
+```
 
-Core Functionalities
+---
+## 📦 Dependencies
 
-Firebase authentication for secure login and registration.
+```json
+{
+  "react": "^18.0.0",
+  "react-router-dom": "^6.0.0",
+  "tailwindcss": "^3.0.0",
+  "firebase": "^9.0.0",
+  "swiper": "^8.0.0",
+  "aos": "^2.3.4"
+}
+```
 
-JWT-based authentication for API security.
+---
 
-Search and filter options for easy navigation.
+## 📖 Usage
 
-Dynamic titles and a user-friendly 404 error page.
+1. **Navbar:**  
+   - Before Login: Logo, Home, Services, Login, Register.  
+   - After Login: Logo, Home, Services, Add Service, My Reviews, My Services, User Avatar, Logout.
 
-Toast notifications for CRUD operations.
+2. **Page Structure:**  
+   - **Banner Section:** Carousel with highlights .  
+   - **Featured Services Section:** Displays 6 services .  
+   - **Meet Our Partners Section:** Key partners with their logos.  
+   **Extra Sections:**  Two meaningful additional sections.  
 
-Framer Motion animations for interactive user experience.
+3. ** Service Pages:**  
+   -List of all services with a search and filter option..  
+   -Service Details with review count and reviews.  
 
-Deployment Guidelines
+4. **Authentication:**  
+   - Login and Register with Firebase.
+   -Password validation for security.  
 
-Ensure:
+✅Private Pages
 
-The server works perfectly in production without any errors (CORS, 404, or 504).
+-Add Service: Form to add new services.
+-My Services: Table with update and delete options.
+-My Reviews: Cards with update and delete options.
 
-Live links are functional and error-free.
+🔐 Deployment Guidelines
+-Ensure the server works perfectly in production (avoid CORS, 404, or 504 errors).
+-Validate all live links before deployment.
+-Prevent logged-in users from being redirected to login after page reloads.
+-Secure Firebase and MongoDB credentials using environment variables.
 
-Logged-in users do not redirect to login on reloading private routes.
+Deployment Platforms:
+Client: Vercel
+Server: Render / Railway
 
-Firebase and MongoDB credentials are secured using environment variables.
+---
 
-Deployment Platforms
 
-Client: [Vercel]
-
-
-Page Structure
-
-Layout
-
-Navbar:
-
-Before Login: Logo, Home, Services, Login, Register.
-
-After Login: Logo, Home, Services, Add Service, My Reviews, My Services, User Avatar, Logout.
-
-Dynamic Main Section: Updates based on the route.
-
-Footer: Logo, description, copyright, and useful links.
-
-Pages
-
-Home Page:
-
-Banner Section: Carousel with highlights.
-
-Featured Services Section: Displays 6 services.
-
-Meet Our Partners Section: Key partners with their logos.
-
-Extra Sections: Two meaningful additional sections.
-
-Service Pages:
-
-List of all services with a search and filter option.
-
-Service Details with review count and reviews.
-
-Authentication:
-
-Login and Register with Firebase.
-
-Password validation.
-
-Private Pages:
-
-Add Service: Form to add services.
-
-My Services: Table with update and delete options.
-
-My Reviews: Cards with update and delete options.
-
-Commit Guidelines
-
-Client: At least 15 meaningful commits.
-
-Server: At least 8 meaningful commits.
-
-Commit messages should be descriptive (e.g., "Added JWT token validation for secure APIs").
-
-Packages Used
-
-Frontend:
-
-React, React Router DOM
-
-Framer Motion
-
-React Toastify
-
-Tailwind CSS
-
-React Countup
-
-Backend:
-
-Express
-
-MongoDB
-
-JWT
-
-Dotenv
-
-Development Tips
-
-Ensure all components are properly aligned with consistent spacing.
-
-Avoid overloading the design with unnecessary elements.
-
-Make use of meaningful color contrasts to ensure readability.
-
-Keep the codebase clean and organized for easier maintenance.
-
-Additional Functionalities
-
-JWT authentication for API security.
-
-Search and filter features for improved usability.
-
-Countup for displaying platform stats (users, reviews, services).
-
-Final Checks
-
-
-
-License
-
-This project is open-source and available for further development and contributions.
+Enjoy your adventure with **FEEDBACKER**! 🚀🌿
