@@ -15,6 +15,9 @@ const Navbar = () => {
       <li>
         <Link to={"/AllService"}>Services</Link>
       </li>
+      <li>
+        <Link to={"/about"}>About</Link>
+      </li>
     </>
   );
 
@@ -34,6 +37,9 @@ const Navbar = () => {
       </li>
       <li>
         <Link to={"/myReview"}>My Reviews</Link>
+      </li>
+      <li>
+        <Link to={"/about"}>About</Link>
       </li>
     </>
   );
@@ -59,7 +65,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="bg-blue-500 text-white shadow-md">
+    <nav className="bg-blue-300  shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo Section */}
         <div className="flex items-center">

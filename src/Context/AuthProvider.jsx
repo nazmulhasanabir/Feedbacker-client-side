@@ -30,7 +30,6 @@ const AuthProvider = ({children}) => {
             console.log('state', currentUser?.email);
             if(currentUser?.email){
                 const user = {email:currentUser.email}
-
                 axios.post('https://review-xpert-server-side.vercel.app/jwt', user , {withCredentials:true})
                 .then(res => {console.log('login token',res.data)
                     setLoading(false)
@@ -50,7 +49,7 @@ const AuthProvider = ({children}) => {
         }
     }, [auth])
     const UpdateUserProfile = (updateData) => {
-        console.log(updateData)
+      
         return updateProfile(auth.currentUser, updateData);
       };
 

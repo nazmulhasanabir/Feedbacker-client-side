@@ -13,7 +13,6 @@ const UpdateReview = () => {
     const { id } = useParams();
     const formattedDate = new Date();
     const date = format(formattedDate, 'yyyy-MM-dd')
-  console.log(review);
     const [rating, setRating] = useState(0);
     const handleInputChange = (e) => {
       let value = parseInt(e.target.value, 10);

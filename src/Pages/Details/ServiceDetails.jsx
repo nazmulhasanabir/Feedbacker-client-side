@@ -4,9 +4,9 @@ import { Link, useLoaderData } from "react-router-dom";
 import RatingCustome from "../../Rating/RatingCustome";
 
 const ServiceDetails = () => {
-  const details = useLoaderData();
+  const details  = useLoaderData();
   const [reviews, setReviews] = useState([]);
-  console.log(details);
+
   axios
     .get(
       `https://review-xpert-server-side.vercel.app/reviewAdded?id=${details._id}`
