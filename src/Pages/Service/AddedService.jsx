@@ -19,7 +19,7 @@ const AddedService = () => {
       ...initialData,
       date,
     };
-    fetch("https://review-xpert-server-side.vercel.app/feedback", {
+    fetch("http://localhost:7000/feedback", {
       method: "POST",
       headers: {
         "content-type": "application/json",

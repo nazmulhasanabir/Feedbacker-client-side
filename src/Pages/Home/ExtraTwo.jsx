@@ -1,6 +1,5 @@
-import React from "react";
-
-import img2 from "../../assets/pinterest/1.jpg"
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import img2 from "../../assets/picture/collage-customer-experience-concept_23-2149367139.jpg"
 import img3 from "../../assets/pinterest/12.png"
 import img4 from "../../assets/pinterest/123.jpg"
 import img5 from "../../assets/pinterest/1234.webp"
@@ -13,30 +12,36 @@ import { Link } from "react-router-dom";
 
 const ExtraTwo = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-between gap-4 bg-orange-500 ">
+    <div className="flex flex-col lg:flex-row text-black items-center justify-between gap-4 bg-cyan-200 ">
     <div className=" w-6/12 p-4 lg:p-12">
-      <h2 className="text-xl  lg:text-3xl  text-white  font-bold mb-4 ">
+      <h2 className="text-xl  lg:text-3xl    font-bold mb-4 ">
         We craft engaging experiences through innovative storytelling and
         design.
       </h2>
-      <p className=" text-white mb-6">
+      <p className="  mb-6">
         Whether you're sharing your thoughts or exploring others' feedback,
         our platform ensures a seamless and dynamic review process. Empower
         your opinions and connect with others effortlessly, making every
         review count.
       </p>
-   <Link to={'/about'}><button className="btn btn-primary btn-md">About Us</button></Link>
+   <Link to={'/about'}><button className="btn bg-cyan-500 text-white btn-md">About Us</button></Link>
     </div>
     <div className="w-full lg:w-6/12 ">
       <Swiper
-        spaceBetween={20}
-        breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 1 },
+        spaceBetween={200}
+        centeredSlides={true}
+        slidesPerView={1}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
         }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={false}
+        modules={[Autoplay, Pagination, Navigation]}
+        cl
+
       >
         {/* <SwiperSlide>
           <img src={img1} className="h-96 w-full  object-cover rounded-lg" />

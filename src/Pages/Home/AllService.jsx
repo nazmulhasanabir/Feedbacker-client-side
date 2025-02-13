@@ -7,7 +7,7 @@ const AllService = () => {
     const [filter , setFilter] = useState('')
 
   useEffect(() => {
-    fetch(`https://review-xpert-server-side.vercel.app/feedbacks?filter=${filter}`)
+    fetch(`http://localhost:7000/feedbacks?filter=${filter}`)
       .then((res) => res.json())
       .then((data) => {
         setService(data);
@@ -27,18 +27,18 @@ const AllService = () => {
           <option>Transport</option>
         </select>
       </div>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 w-11/12 mx-auto  gap-6 text-white">
         {service.map((serv) => (
-          <div key={serv._id} className="card bg-base-100 w-96 shadow-xl">
+          <div key={serv._id} className="card w-96 shadow-xl rounded-lg">
             <figure>
               <img src={serv.image} />
             </figure>
-            <div className="card-body">
-              <h2 className="card-title">{serv.title}</h2>
+            <div className="card-body bg-blue-400  rounded-b-xl">
+              <h2 className="card-title bg-cyan-900 p-1 text-center rounded-md font-bold">{serv.title}</h2>
               <p>{serv.description}</p>
               <div className="card-actions justify-end">
                 <Link to={`/feedback/${serv._id}`}>
-                  <button className="btn btn-primary">See Details</button>
+                  <button className="btn bg-blue-500 border-cyan-300 text-white btn-md">See Details</button>
                 </Link>
               </div>
             </div>

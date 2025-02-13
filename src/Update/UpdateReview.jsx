@@ -40,7 +40,7 @@ const UpdateReview = () => {
           photoURL,
           date
         };
-        fetch(`https://review-xpert-server-side.vercel.app/UpdateReview/${review._id}`, {
+        fetch(`http://localhost:7000/UpdateReview/${review._id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",

@@ -13,12 +13,12 @@ const SingleCard = ({ service }) => {
 
   return (
     <div>
-      <div className="card bg-base-100 w-10/12 mx-auto shadow-xl animated-card">
+      <div className="card bg-[#49adc0] text-white  w-10/12 mx-auto shadow-xl animated-card">
         <figure>
           <img className="w-full h-[250px]" src={image} alt="Shoes" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">
+          <h2 className="card-title bg-cyan-900 p-1 text-center rounded-md font-bold">
             {title}
           </h2>
           <p>{description}</p>

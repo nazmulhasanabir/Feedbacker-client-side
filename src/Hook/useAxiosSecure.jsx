@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 const axiosInstance = axios.create({
-    baseURL: 'https://review-xpert-server-side.vercel.app',  
+    baseURL: 'http://localhost:7000',  
     withCredentials: true
 })
 

@@ -9,7 +9,7 @@ const ServiceDetails = () => {
 
   axios
     .get(
-      `https://review-xpert-server-side.vercel.app/reviewAdded?id=${details._id}`
+      `http://localhost:7000/reviewAdded?id=${details._id}`
     )
     .then((response) => {
       setReviews(response.data);

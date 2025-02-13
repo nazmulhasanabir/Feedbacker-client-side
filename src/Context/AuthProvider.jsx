@@ -30,12 +30,12 @@ const AuthProvider = ({children}) => {
             console.log('state', currentUser?.email);
             if(currentUser?.email){
                 const user = {email:currentUser.email}
-                axios.post('https://review-xpert-server-side.vercel.app/jwt', user , {withCredentials:true})
+                axios.post('http://localhost:7000/jwt', user , {withCredentials:true})
                 .then(res => {console.log('login token',res.data)
                     setLoading(false)
                 })
             }else{
-                    axios.post('https://review-xpert-server-side.vercel.app/logout', {}, {
+                    axios.post('http://localhost:7000/logout', {}, {
                         withCredentials:true
                     })
                     .then(res=> {console.log('logout', res.data)

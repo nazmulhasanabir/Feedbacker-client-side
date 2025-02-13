@@ -10,13 +10,13 @@ const Navbar = () => {
   const link = (
     <>
       <li>
-        <Link to={"/"}>Home</Link>
+        <Link className="bg-cyan-500 text-white border-cyan-500 btn" to={"/"}>Home</Link>
       </li>
       <li>
-        <Link to={"/AllService"}>Services</Link>
+        <Link  className="bg-cyan-500 text-white border-cyan-500 btn"to={"/AllService"}>Services</Link>
       </li>
       <li>
-        <Link to={"/about"}>About</Link>
+        <Link className="bg-cyan-500 text-white border-cyan-500 btn" to={"/about"}>About</Link>
       </li>
     </>
   );
@@ -24,22 +24,22 @@ const Navbar = () => {
   const UserLink = (
     <>
       <li>
-        <Link to={"/"}  className="btn">Home</Link>
+        <Link to={"/"}  className="btn text-white bg-cyan-500 border-cyan-500 ">Home</Link>
       </li>
       <li>
-        <Link to={"/AllService"} className="btn">All Services</Link>
+        <Link to={"/AllService"} className="btn text-white bg-cyan-500 border-cyan-500 ">All Services</Link>
       </li>
       <li>
-        <Link to={"/addedService"} className="btn">Add Service</Link>
+        <Link to={"/addedService"} className="btn text-white bg-cyan-500 border-cyan-500 ">Add Service</Link>
       </li>
       <li>
-        <Link to={"/myService"} className="btn">My Services</Link>
+        <Link to={"/myService"} className="btn text-white bg-cyan-500 border-cyan-500 ">My Services</Link>
       </li>
       <li>
-        <Link to={"/myReview"} className="btn">My Reviews</Link>
+        <Link to={"/myReview"} className="btn text-white bg-cyan-500 border-cyan-500 ">My Reviews</Link>
       </li>
       <li>
-        <Link to={"/about"} className="btn">About</Link>
+        <Link to={"/about"} className="btn text-white bg-cyan-500 border-cyan-500 ">About</Link>
       </li>
     </>
   );

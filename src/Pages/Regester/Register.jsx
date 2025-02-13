@@ -33,7 +33,7 @@ const Register = () => {
   //     );
   //     return;
   //   }
-  //   fetch('https://review-xpert-server-side.vercel.app/user', {
+  //   fetch('http://localhost:7000/user', {
   //     method: "POST",
   //     headers:{
   //       'content-type': 'application/json'
@@ -96,7 +96,7 @@ const Register = () => {
       return;
     }
 
-    fetch("https://review-xpert-server-side.vercel.app/user", {
+    fetch("http://localhost:7000/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -150,7 +150,7 @@ const Register = () => {
     signInWithPopup(auth, provider)
       // eslint-disable-next-line no-unused-var
       .then((result) => {
-        fetch("https://review-xpert-server-side.vercel.app/user", {
+        fetch("http://localhost:7000/user", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

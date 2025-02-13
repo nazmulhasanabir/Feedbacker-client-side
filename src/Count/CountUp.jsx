@@ -10,15 +10,15 @@ const Count = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    axios.get("https://review-xpert-server-side.vercel.app/feedbacks").then((response) => {
+    axios.get("http://localhost:7000/feedbacks").then((response) => {
       setService(response.data);
     });
 
-    axios.get("https://review-xpert-server-side.vercel.app/user").then((response) => {
+    axios.get("http://localhost:7000/user").then((response) => {
       setUsers(response.data);
     });
 
-    axios.get("https://review-xpert-server-side.vercel.app/review").then((response) => {
+    axios.get("http://localhost:7000/review").then((response) => {
       setReviews(response.data);
     });
   }, []);
@@ -27,7 +27,7 @@ const Count = () => {
     <div className="mt-3">
     <h2 className="text-3xl text-center font-bold p-1">Our Engage</h2>
     <div className="flex flex-row items-center  justify-center gap-6 my-10 w-full">
-      <div className="text-center border-orange-600 border-2  rounded-lg p-6 shadow-md">
+      <div className="text-center border-cyan-600 border-2  rounded-lg p-6 shadow-md">
         <img  className="h-28" src={img2} alt="" />
         <h2 className="text-xl font-bold">Services</h2>
         <CountUp
@@ -37,7 +37,7 @@ const Count = () => {
         />
       </div>
 
-      <div className="text-center border-orange-600 border-2  rounded-lg p-6 shadow-md">
+      <div className="text-center border-cyan-600 border-2  rounded-lg p-6 shadow-md">
       <img src={img1} className="h-28" alt="" />
         <h2 className="text-xl font-bold">Users</h2>
         <CountUp
@@ -47,7 +47,7 @@ const Count = () => {
         />
       </div>
 
-      <div className="text-center border-orange-600 border-2   rounded-lg p-6 shadow-md">
+      <div className="text-center border-cyan-600 border-2   rounded-lg p-6 shadow-md">
         <img className=" h-28" src={img3} alt="" />
         <h2 className="text-xl font-bold">Reviews</h2>
         <CountUp

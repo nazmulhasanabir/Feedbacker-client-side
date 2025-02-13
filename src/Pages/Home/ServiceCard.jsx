@@ -10,7 +10,7 @@ const ServiceCard = () => {
   const [loadings, setLoading] = useState(true)
   useEffect(()=>{
     axios
-    .get("https://review-xpert-server-side.vercel.app/feedbacks")
+    .get("http://localhost:7000/feedbacks")
     .then((response) => {
       setServices(response.data);
       setLoading(false)
@@ -24,7 +24,7 @@ const ServiceCard = () => {
         const sliceService = services.slice(0 , 6) 
   return (
     <>
-      <h2 className="text-center text-xl lg:text-4xl font-bold p-3" >
+      <h2 className="text-center  w-6/12 rounded-2xl m-3 mx-auto text-xl lg:text-4xl font-bold p-3 bg-cyan-300" >
         Popular Services Company
       </h2>
       {loadings ? (
@@ -41,7 +41,7 @@ const ServiceCard = () => {
           </div>
           <div className="p-2 lg:p-8 w-2/12 mx-auto">
             <Link to={"/AllService"}>
-              <button className="btn">See All Service</button>
+              <button className="btn bg-cyan-500 text-white">See All Service</button>
             </Link>
           </div>
         </>
