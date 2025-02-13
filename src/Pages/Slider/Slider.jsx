@@ -1,26 +1,25 @@
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { animate } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
 import { Swiper, SwiperSlide } from "swiper/react";
-   import img1 from '../../assets/pinterest/1.jpg'
-   import img2 from '../../assets/pinterest/12.png'
-   import img3 from '../../assets/pinterest/123.jpg'
-   import img4 from '../../assets/pinterest/1234.webp'
-   import img5 from '../../assets/pinterest/2.jpg'
-   import img6 from '../../assets/pinterest/23.jpg'
-   import img7 from '../../assets/pinterest/234.webp'
-
+  
+   import img2 from '../../assets/picture/feedback-concept-template_23-2148963814.jpg'
+   import img3 from '../../assets/picture/premium_photo-1682310144714-cb77b1e6d64a.avif'
+   import img4 from '../../assets/picture/smileys-5617876_640.jpg'  
+   import img5 from '../../assets/picture/collage-customer-experience-concept_23-2149367139.jpg'
+  
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useEffect } from "react";
+
 const   Slider = () => {
    useEffect(() => {
     animate(".box", { opacity: 1, rotate: 360 }, { duration: 1 });
         }, []);
     return (
-        <div className="m-1 lg:m-20">
+        <div className=" w-8/12 mx-auto ">
              <Swiper
         // slidesPerView={3}
         // spaceBetween={30}
@@ -33,7 +32,7 @@ const   Slider = () => {
         centeredSlides={true}
         slidesPerView={1}
         autoplay={{
-          delay: 1000,
+          delay: 2000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -45,13 +44,12 @@ const   Slider = () => {
 
       >
        
-        <SwiperSlide><img className=" h-40 lg:h-[450px] w-full rounded-xl" src={img2} /></SwiperSlide>
-        <SwiperSlide><img className=" h-40 lg:h-[450px] w-full rounded-xl" src={img3} /></SwiperSlide>
-        <SwiperSlide><img className=" h-40 lg:h-[450px] w-full rounded-xl" src={img4} /></SwiperSlide>
-        <SwiperSlide><img className=" h-40 lg:h-[450px] w-full rounded-xl" src={img5} /></SwiperSlide>
-     
-        
+        <SwiperSlide><img className="h-40 lg:h-[550px] w-full rounded-lg" src={img2} /></SwiperSlide>
+        <SwiperSlide><img className="h-40 lg:h-[550px] w-full rounded-lg" src={img3} /></SwiperSlide>
+        <SwiperSlide><img className="h-40 lg:h-[550px] w-full rounded-lg" src={img4} /></SwiperSlide>
+        <SwiperSlide><img className="h-40 lg:h-[550px] w-full rounded-lg" src={img5} /></SwiperSlide>      
       </Swiper>
+      
         </div>
     );
 };

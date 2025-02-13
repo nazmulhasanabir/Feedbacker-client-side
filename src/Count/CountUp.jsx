@@ -24,8 +24,8 @@ const Count = () => {
   }, []);
 
   return (
-    <>
-    <h2 className="text-3xl text-center font-bold mb-10">Our Engage</h2>
+    <div className="mt-3">
+    <h2 className="text-3xl text-center font-bold p-1">Our Engage</h2>
     <div className="flex flex-row items-center  justify-center gap-6 my-10 w-full">
       <div className="text-center border-orange-600 border-2  rounded-lg p-6 shadow-md">
         <img  className="h-28" src={img2} alt="" />
@@ -57,7 +57,7 @@ const Count = () => {
         />
       </div>
     </div>
-    </>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseAuth from "../../Hook/UseAuth";
 import { useState } from "react";
-
+import img from '../../assets/logo/peer-review-icon-2888794_1280.webp'
 const Navbar = () => {
   const { user, signOutUser } = UseAuth({});
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,22 +24,22 @@ const Navbar = () => {
   const UserLink = (
     <>
       <li>
-        <Link to={"/"}>Home</Link>
+        <Link to={"/"}  className="btn">Home</Link>
       </li>
       <li>
-        <Link to={"/AllService"}>All Services</Link>
+        <Link to={"/AllService"} className="btn">All Services</Link>
       </li>
       <li>
-        <Link to={"/addedService"}>Add Service</Link>
+        <Link to={"/addedService"} className="btn">Add Service</Link>
       </li>
       <li>
-        <Link to={"/myService"}>My Services</Link>
+        <Link to={"/myService"} className="btn">My Services</Link>
       </li>
       <li>
-        <Link to={"/myReview"}>My Reviews</Link>
+        <Link to={"/myReview"} className="btn">My Reviews</Link>
       </li>
       <li>
-        <Link to={"/about"}>About</Link>
+        <Link to={"/about"} className="btn">About</Link>
       </li>
     </>
   );
@@ -53,7 +53,7 @@ const Navbar = () => {
           text: "Sign-Out successful!",
         });
       })
-      .catch((error) => {
+      .catch(() => {
         Swal.fire({
           title: "Error!",
           text: "SignOut Error",
@@ -65,12 +65,12 @@ const Navbar = () => {
 
 
   return (
-    <nav className="bg-blue-300  shadow-md sticky top-0 z-50">
+    <nav className="bg-cyan-300 bg-opacity-90 shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo Section */}
         <div className="flex items-center">
           <button
-            className="lg:hidden text-white focus:outline-none"
+            className="lg:hidden text-black focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <svg
@@ -90,7 +90,7 @@ const Navbar = () => {
           </button>
           <img
             className="w-12 h-12 rounded-full ml-2"
-            src={'https://i.ibb.co.com/hDy0f3j/e4jgbyjh8qwannrkevavx04jv0-image.jpg'}
+            src={img}
             alt="Logo"
           />
           <span className="ml-2 text-xl font-bold hidden lg:block">
