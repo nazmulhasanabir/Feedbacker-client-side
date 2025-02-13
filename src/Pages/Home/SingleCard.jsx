@@ -20,7 +20,6 @@ const SingleCard = ({ service }) => {
         <div className="card-body">
           <h2 className="card-title">
             {title}
-            <div className="badge bg-red-500 text-white">{price}$</div>
           </h2>
           <p>{description}</p>
           <div className="card-actions justify-end">
