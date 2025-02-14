@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const ExtraTwo = () => {
   return (
-    <div className="flex flex-col lg:flex-row text-black items-center justify-between gap-4 bg-cyan-200 ">
+    <div className="flex flex-col lg:flex-row text-black items-center justify-between gap-4 bg-cyan-200 dark:bg-cyan-700 dark:text-white">
     <div className=" w-6/12 p-4 lg:p-12">
       <h2 className="text-xl  lg:text-3xl    font-bold mb-4 ">
         We craft engaging experiences through innovative storytelling and

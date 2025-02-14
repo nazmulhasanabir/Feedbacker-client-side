@@ -26,8 +26,8 @@ const Count = () => {
   return (
     <div className="mt-3">
     <h2 className="text-3xl text-center font-bold p-1">Our Engage</h2>
-    <div className="flex flex-row items-center  justify-center gap-6 my-10 w-full">
-      <div className="text-center border-cyan-600 border-2  rounded-lg p-6 shadow-md">
+    <div className="flex flex-col lg:flex-row items-center  justify-center gap-6 my-10 w-full">
+      <div className="text-center dark:bg-blue-900 border-cyan-600 border-2  rounded-lg p-6 shadow-md">
         <img  className="h-28" src={img2} alt="" />
         <h2 className="text-xl font-bold">Services</h2>
         <CountUp
@@ -37,7 +37,7 @@ const Count = () => {
         />
       </div>
 
-      <div className="text-center border-cyan-600 border-2  rounded-lg p-6 shadow-md">
+      <div className="text-center dark:bg-blue-900 border-cyan-600 border-2  rounded-lg p-6 shadow-md">
       <img src={img1} className="h-28" alt="" />
         <h2 className="text-xl font-bold">Users</h2>
         <CountUp
@@ -47,7 +47,7 @@ const Count = () => {
         />
       </div>
 
-      <div className="text-center border-cyan-600 border-2   rounded-lg p-6 shadow-md">
+      <div className="text-center dark:bg-blue-900 border-cyan-600 border-2   rounded-lg p-6 shadow-md">
         <img className=" h-28" src={img3} alt="" />
         <h2 className="text-xl font-bold">Reviews</h2>
         <CountUp

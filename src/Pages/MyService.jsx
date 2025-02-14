@@ -62,7 +62,7 @@ const MyService = () => {
   };
 
   return (
-    <div>
+    <div className="dark:bg-cyan-600 dark:text-white">
       <div className="w-6/12 mx-auto">
         <label className="input input-bordered flex items-center gap-2">
           <input onChange={e => e.target.value.trim() && setSearch(e.target.value)} type="text" name="search" className="grow" placeholder="Search" />

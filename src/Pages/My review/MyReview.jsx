@@ -64,8 +64,8 @@ const MyReview = () => {
   }
 
   return (
-    <div>
-      <h2>My review {reviews.length}</h2>
+    <div className="dark:bg-cyan-500 dark:text-white">
+
       <div className="overflow-x-auto">
         <table className="table">
           <thead>

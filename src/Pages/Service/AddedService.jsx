@@ -3,6 +3,7 @@ import UseAuth from "../../Hook/UseAuth";
 import { format } from "date-fns";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { div } from "motion/react-client";
 
 const AddedService = () => {
   const { user } = UseAuth();
@@ -40,7 +41,9 @@ const AddedService = () => {
   };
 
   return (
-    <div className="w-6/12 mx-auto">
+      <div className="bg-cyan-400 dark:bg-cyan-900">
+
+    <div className="w-6/12 mx-auto ">
       <form onSubmit={handleAddService} className="card-body">
         <div className="form-control">
           {/* service title */}
@@ -143,6 +146,7 @@ const AddedService = () => {
         </div>
       </form>
     </div>
+      </div>
   );
 };
 

@@ -8,7 +8,7 @@ import Partner from '../Partner';
 
 const Home = () => {
     return (
-        <div>
+        <div className='dark:bg-cyan-900 dark:text-white'>
         <Slider></Slider>
         <Count></Count>
         <ServiceCard></ServiceCard>

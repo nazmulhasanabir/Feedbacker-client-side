@@ -1,12 +1,12 @@
 import React from "react";
-
+import img1 from '../../assets/logo/peer-review-icon-2888794_1280.webp'
 const Footer = () => {
   return (
-    <div>
-      <footer className=" flex flex-col justify-center items-center gap-4 dark:bg-gradient-to-br from-white via-white to-white dark:text-black rounded p-1 ">
+    <div >
+      <footer className=" flex flex-col justify-center items-center gap-4 dark:bg-cyan-900 dark:text-white rounded p-1 ">
       <img
-              className=" h-28 w-44"
-              src={'https://i.ibb.co.com/hDy0f3j/e4jgbyjh8qwannrkevavx04jv0-image.jpg'}
+              className=" h-32 w-36 rounded-full"
+              src={img1}
               alt="Logo"
             />
             {/* <h2 className="text-3xl font-bold">FeedBacker</h2> */}

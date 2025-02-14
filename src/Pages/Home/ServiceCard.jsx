@@ -24,7 +24,7 @@ const ServiceCard = () => {
         const sliceService = services.slice(0 , 6) 
   return (
     <>
-      <h2 className="text-center  w-6/12 rounded-2xl m-3 mx-auto text-xl lg:text-4xl font-bold p-3 bg-cyan-300" >
+      <h2 className="text-center  w-6/12 rounded-2xl m-3 mx-auto text-xl lg:text-4xl font-bold p-3 bg-cyan-300  dark:bg-[#0a192f]" >
         Popular Services Company
       </h2>
       {loadings ? (
@@ -41,7 +41,7 @@ const ServiceCard = () => {
           </div>
           <div className="p-2 lg:p-8 w-2/12 mx-auto">
             <Link to={"/AllService"}>
-              <button className="btn bg-cyan-500 text-white">See All Service</button>
+              <button className="btn bg-cyan-500  text-white">See All Service</button>
             </Link>
           </div>
         </>

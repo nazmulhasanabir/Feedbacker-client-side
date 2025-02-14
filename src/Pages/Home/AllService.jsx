@@ -16,8 +16,8 @@ const AllService = () => {
 
   
   return (
-    <div>
-      <div className="w-6/12 mx-auto my-6">
+    <div className="dark:bg-cyan-900">
+      <div className="w-3/12 mx-auto p-2  ">
         <select name="category" id="category" onChange={e => setFilter(e.target.value)} className="select select-bordered w-full max-w-xs">
           <option disabled selected>
             Filter By Category
@@ -33,12 +33,12 @@ const AllService = () => {
             <figure>
               <img src={serv.image} />
             </figure>
-            <div className="card-body bg-blue-400  rounded-b-xl">
-              <h2 className="card-title bg-cyan-900 p-1 text-center rounded-md font-bold">{serv.title}</h2>
+            <div className="card-body bg-cyan-400 dark:bg-cyan-700 rounded-b-xl">
+              <h2 className="card-title  p-1 text-center rounded-md font-bold">{serv.title}</h2>
               <p>{serv.description}</p>
               <div className="card-actions justify-end">
                 <Link to={`/feedback/${serv._id}`}>
-                  <button className="btn bg-blue-500 border-cyan-300 text-white btn-md">See Details</button>
+                  <button className="btn bg-cyan-500 border-cyan-300 text-white btn-md">See Details</button>
                 </Link>
               </div>
             </div>

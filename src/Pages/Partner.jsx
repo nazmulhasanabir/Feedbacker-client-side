@@ -8,11 +8,11 @@ const Partner = () => {
   return (
     <div>
       <div>
-        <h2 className="text-3xl text-center font-bold bg-cyan-300  w-6/12 mx-auto rounded-2xl p-3">Meet Our Partners</h2>
+        <h2 className="text-3xl text-center font-bold bg-cyan-300 dark:bg-[#0a192f]  w-6/12 mx-auto rounded-2xl p-3">Meet Our Partners</h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 ">
           {/* 1 */}
-          <div className="card  w-8/12 mx-auto my-5  text-white  bg-[#49adc0] shadow-md">
+          <div className="card  w-8/12 mx-auto my-5    text-white  bg-[#49adc0] shadow-md">
             <figure className="px-10 pt-10">
               <img src={img1} alt="Shoes" className="rounded-xl" />
             </figure>
@@ -26,7 +26,7 @@ const Partner = () => {
             </div>
           </div>
           {/* 2 */}
-          <div className="card  w-8/12 mx-auto my-5  text-white  bg-[#49adc0] shadow-md">
+          <div className="card  w-8/12 mx-auto my-5    text-white  bg-[#49adc0] shadow-md">
             <figure className="px-10 pt-10">
               <img src={img2} alt="Shoes" className="rounded-xl" />
             </figure>
@@ -40,7 +40,7 @@ const Partner = () => {
             </div>
           </div>
           {/* 3 */}
-          <div className="card  w-8/12 mx-auto text-white  my-5 bg-[#49adc0] shadow-md">
+          <div className="card  w-8/12 mx-auto   text-white  my-5 bg-[#49adc0] shadow-md">
             <figure className="px-10 pt-10">
               <img src={img3} alt="Shoes" className="rounded-xl" />
             </figure>
@@ -54,7 +54,7 @@ const Partner = () => {
             </div>
           </div>
           {/* 4 */}
-          <div className="card  w-8/12 mx-auto my-5  text-white  bg-[#49adc0] shadow-md">
+          <div className="card  w-8/12 mx-auto my-5    text-white  bg-[#49adc0] shadow-md">
             <figure className="px-10 pt-10">
               <img src={img4} alt="Shoes" className="rounded-xl" />
             </figure>
@@ -68,7 +68,7 @@ const Partner = () => {
             </div>
           </div>
           {/* 5 */}
-          <div className="card  w-8/12 mx-auto my-5  text-white  bg-[#49adc0] shadow-md">
+          <div className="card  w-8/12 mx-auto my-5    text-white  bg-[#49adc0] shadow-md">
             <figure className="px-10 pt-10">
               <img src={img5} alt="Shoes" className="rounded-xl" />
             </figure>
@@ -82,7 +82,7 @@ const Partner = () => {
             </div>
           </div>
           {/* 6 */}
-          <div className="card  w-8/12 mx-auto  text-white my-5 bg-[#49adc0] shadow-md">
+          <div className="card  w-8/12 mx-auto    text-white my-5 bg-[#49adc0] shadow-md">
             <figure className="px-10 pt-10">
               <img src={img6} alt="Shoes" className="rounded-xl" />
             </figure>
