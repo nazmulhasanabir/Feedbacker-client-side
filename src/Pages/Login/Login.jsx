@@ -110,11 +110,11 @@ const Login = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero  min-h-screen dark:bg-cyan-700">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="card  w-full max-w-sm shrink-0 shadow-2xl bg-cyan-400 dark:bg-cyan-900 dark:text-white p-2">
         <h2 className="text-center font-bold text-3xl">Login</h2>
-          <form onSubmit={handleSignIn} className="card-body">
+          <form onSubmit={handleSignIn} className="card-body ">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -155,12 +155,12 @@ const Login = () => {
               <p className="mt-2 text-center ">
                 New here? Create an account and join us today!
                 <Link to={"/register"}>
-                  <button className="text-purple-900 font-semibold text-base">
+                  <button className="text-blue-500 font-semibold text-base">
                     Register
                   </button>
                 </Link>
               </p>
-              <button className="btn btn-primary">Login</button>
+              <button className="btn bg-cyan-500 border-cyan-500r">Login</button>
             </div>
           </form>
         </div>

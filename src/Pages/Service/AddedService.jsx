@@ -142,7 +142,7 @@ const AddedService = () => {
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Add Service</button>
+          <button className="btn bg-cyan-500 text-white">Add Service</button>
         </div>
       </form>
     </div>

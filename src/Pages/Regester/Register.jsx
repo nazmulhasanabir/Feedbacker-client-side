@@ -191,9 +191,9 @@ const Register = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero dark:bg-cyan-800 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="card bg-cyan-600 text-white  w-full max-w-sm shrink-0 shadow-2xl">
           <h1 className="text-3xl font-bold text-center">Register now!</h1>
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
@@ -254,13 +254,13 @@ const Register = () => {
               <p className="mt-2 text-center ">
                 You have already a account?
                 <Link to={"/signIn"}>
-                  <button className="text-purple-900 font-semibold text-base">
+                  <button className="text-white font-semibold text-base">
                     Log-In
                   </button>
                 </Link>
               </p>
               {Error && <p className="text-red-500  text-base ">{Error}</p>}
-              <button className="btn btn-primary">Register</button>
+              <button className="btn bg-cyan-500 border-cyan-600">Register</button>
             </div>
           </form>
         </div>
