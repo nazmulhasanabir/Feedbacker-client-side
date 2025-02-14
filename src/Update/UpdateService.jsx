@@ -21,7 +21,7 @@ const UpdateService = () => {
     //       ...initialData,
     //       date,
     //     };
-    //     fetch(`http://localhost:7000/feedback/${_id}`, {
+    //     fetch(`https://review-xpert-server-side.vercel.app/feedback/${_id}`, {
     //       method: "PUT",
     //       headers: {
     //         "content-type": "application/json",
@@ -49,7 +49,7 @@ const UpdateService = () => {
           date,
         };
       
-        fetch(`http://localhost:7000/updateService/${_id}`, {
+        fetch(`https://review-xpert-server-side.vercel.app/updateService/${_id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",

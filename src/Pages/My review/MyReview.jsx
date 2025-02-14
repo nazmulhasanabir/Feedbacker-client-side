@@ -16,7 +16,7 @@ const MyReview = () => {
   useEffect(() => {
   
     axiosSecure
-      .get(`http://localhost:7000/reviewAdd?email=${user.email}`)
+      .get(`https://review-xpert-server-side.vercel.app/reviewAdd?email=${user.email}`)
       .then(res => {
         setReviews(res.data);
         setLoading(false); 
@@ -34,7 +34,7 @@ const MyReview = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:7000/review/${_id}`, {
+        fetch(`https://review-xpert-server-side.vercel.app/review/${_id}`, {
           method: 'DELETE',
         })
           .then((res) => res.json())

@@ -40,7 +40,7 @@ const AddReview = () => {
       photoURL,
       date
     };
-    fetch("http://localhost:7000/reviewAdd", {
+    fetch("https://review-xpert-server-side.vercel.app/reviewAdd", {
       method: "POST",
       headers: {
         "content-type": "application/json",

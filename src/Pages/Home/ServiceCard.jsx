@@ -10,7 +10,7 @@ const ServiceCard = () => {
   const [loadings, setLoading] = useState(true)
   useEffect(()=>{
     axios
-    .get("http://localhost:7000/feedbacks")
+    .get("https://review-xpert-server-side.vercel.app/feedbacks")
     .then((response) => {
       setServices(response.data);
       setLoading(false)

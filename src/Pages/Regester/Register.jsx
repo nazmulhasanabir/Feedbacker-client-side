@@ -33,7 +33,7 @@ const Register = () => {
   //     );
   //     return;
   //   }
-  //   fetch('http://localhost:7000/user', {
+  //   fetch('https://review-xpert-server-side.vercel.app/user', {
   //     method: "POST",
   //     headers:{
   //       'content-type': 'application/json'
@@ -96,7 +96,7 @@ const Register = () => {
       return;
     }
 
-    fetch("http://localhost:7000/user", {
+    fetch("https://review-xpert-server-side.vercel.app/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -150,7 +150,7 @@ const Register = () => {
     signInWithPopup(auth, provider)
       // eslint-disable-next-line no-unused-var
       .then((result) => {
-        fetch("http://localhost:7000/user", {
+        fetch("https://review-xpert-server-side.vercel.app/user", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -254,7 +254,7 @@ const Register = () => {
               <p className="mt-2 text-center ">
                 You have already a account?
                 <Link to={"/signIn"}>
-                  <button className="text-white font-semibold text-base">
+                  <button className="text-wh font-semibold text-base">
                     Log-In
                   </button>
                 </Link>

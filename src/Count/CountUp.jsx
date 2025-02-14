@@ -10,15 +10,15 @@ const Count = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:7000/feedbacks").then((response) => {
+    axios.get("https://review-xpert-server-side.vercel.app/feedbacks").then((response) => {
       setService(response.data);
     });
 
-    axios.get("http://localhost:7000/user").then((response) => {
+    axios.get("https://review-xpert-server-side.vercel.app/user").then((response) => {
       setUsers(response.data);
     });
 
-    axios.get("http://localhost:7000/review").then((response) => {
+    axios.get("https://review-xpert-server-side.vercel.app/review").then((response) => {
       setReviews(response.data);
     });
   }, []);

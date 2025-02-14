@@ -10,7 +10,7 @@ const ServiceDetails = () => {
   // Fetch reviews when the component mounts
   useEffect(() => {
     axios
-      .get(`http://localhost:7000/reviewAdded?id=${details._id}`)
+      .get(`https://review-xpert-server-side.vercel.app/reviewAdded?id=${details._id}`)
       .then((response) => {
         setReviews(response.data);
       });
@@ -46,7 +46,7 @@ const ServiceDetails = () => {
             </p>
           </div>
           <div className="flex flex-wrap gap-2 mt-4">
-            <div className="badge bg-blue-500  px-4 py-2 rounded-full">
+            <div className="badge bg-blue-900 text-white  px-4 py-2 rounded-full">
               {details.category}
             </div>
           </div>

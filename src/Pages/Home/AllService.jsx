@@ -7,7 +7,7 @@ const AllService = () => {
     const [filter , setFilter] = useState('')
 
   useEffect(() => {
-    fetch(`http://localhost:7000/feedbacks?filter=${filter}`)
+    fetch(`https://review-xpert-server-side.vercel.app/feedbacks?filter=${filter}`)
       .then((res) => res.json())
       .then((data) => {
         setService(data);

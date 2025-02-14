@@ -15,10 +15,10 @@ const MyService = () => {
   const axiosSecure = useAxiosSecure()
 
   useEffect(() => {
-    // fetch(`http://localhost:7000/feedback?email=${user.email}&search=${search}`)
+    // fetch(`https://review-xpert-server-side.vercel.app/feedback?email=${user.email}&search=${search}`)
     //   .then((res) => res.json())
     //   .then((data) => setServices(data));
-    // axios.get(`http://localhost:7000/feedback?email=${user.email}&search=${search}`,{
+    // axios.get(`https://review-xpert-server-side.vercel.app/feedback?email=${user.email}&search=${search}`,{
     //   withCredentials:true
     // })
     //   .then(res => setServices(res.data))
@@ -39,7 +39,7 @@ const MyService = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:7000/feedback/${_id}`, {
+        fetch(`https://review-xpert-server-side.vercel.app/feedback/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
