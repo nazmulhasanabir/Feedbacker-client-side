@@ -7,7 +7,7 @@ service providers and reviewers, ensuring a professional experience.
 adventure experiences seamlessly.
 It offers a user-friendly interface, authentication, and detailed adventure listings.
 
-![FEEDBACKER](https://i.ibb.co.com/x88kjBzv/image.png)
+![FEEDBACKER](https://i.ibb.co.com/j97VXdP6/image.png)
 
 ## 🌐 Live Demo  
 🔗 **Live Site:** [FEEDBACKER](https://feedbacker-76382.web.app/)
